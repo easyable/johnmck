@@ -18,27 +18,27 @@
     <div class="header_resize">
       <div class="menu_nav">
          <ul>
-		  <li>
+		  <li class="<%=is_active?("index") %>">
 			<%= link_to('home_path') do %>
 			    <span>Home Page</span>
 			<% end %>
 		  </li>
-		  <li>
+		  <li class="<%=is_active?("services") %>">
 			<%= link_to('services_path') do %>
 				<span>Services</span>
 			<% end %>
 		  </li>
-		  <li>
+		  <li class="<%=is_active?("about") %>">
 			<%= link_to('about_path') do %>
 				<span>About Us</span>
 			<% end %>
 		  </li>
-		  <li>
+		  <li class="<%=is_active?("marketing") %>">
 			<%= link_to('marketing_path') do %>
 				<span>Marketing Tips</span>
 			<% end %>
 		  </li>
-		  <li>
+		  <li class="<%=is_active?("contact") %>">
 			<%= link_to('contact_path') do %>
 				<span>Contact Us</span>
 			<% end %>
