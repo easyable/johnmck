@@ -1,7 +1,7 @@
 class SitesController < ApplicationController
 
   def index
-    @title = "Welcome to the Library!"
+   
   end
   
   def marketing

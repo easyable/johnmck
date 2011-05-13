@@ -1,6 +1,9 @@
 Johnmck::Application.routes.draw do
   root :to => 'sites#index'
- 
+  resources :articles do
+    resources :comments
+  end
+  
   resources :users
   resource :session
   
