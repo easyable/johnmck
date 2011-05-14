@@ -1,6 +1,7 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
+  attr_accessible :email, :password, :password_confirmation 
   
   validates :email, :uniqueness => true,
                     :length => { :within => 5..50 },
@@ -28,7 +29,7 @@ class User < ActiveRecord::Base
   protected
     def encrypt_new_password
       return if password.blank?
-      self.hashed password = encrypt(password)
+      self.hashed_password = encrypt(password)
     end
     
     def password_required?
