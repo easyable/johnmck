@@ -3,7 +3,7 @@ Johnmck::Application.routes.draw do
   resources :articles do
     resources :comments
   end
-  
+  resources :comments
   resources :users
   resource :session
   
@@ -14,5 +14,5 @@ Johnmck::Application.routes.draw do
   match '/marketing_path', :to => 'sites#marketing'
   
   match '/login' => "sessions#new", :as => "login"
-  match '/logout' => "sessions#destroy", :as => "logout"
+  match '/logout' => "sessions#destroy", :as => "logout" 
 end

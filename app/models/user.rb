@@ -1,7 +1,6 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :email, :password, :password_confirmation 
   
   validates :email, :uniqueness => true,
                     :length => { :within => 5..50 },
