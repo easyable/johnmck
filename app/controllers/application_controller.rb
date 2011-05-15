@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  
-  protected
+    protected
       # Returns the currently logged in user or nil if there isn't one
       def current_user
         return unless session[:user_id]
