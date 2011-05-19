@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20110518210053) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "approve_bool"
+    t.boolean  "approved"
   end
 
   create_table "sessions", :force => true do |t|

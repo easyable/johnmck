@@ -11,13 +11,13 @@ class Article < ActiveRecord::Base
   def long_title
      "#{title} - #{published_at}"
   end
-  def admin
-     return false unless admin.is_a? User
-     user == admin
+  def current_user
+     return false unless current_user.is_a? User
+     user == current_user
   end
   
   def owned_by(owner)
-    return false unless owner.is_a? User
-    user == owner
+    return false unless owner.is_a? current_user
+    current_user == owner
   end
 end

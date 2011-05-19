@@ -76,8 +76,11 @@
         <h2 class="star"><span>Sidebar</span> Menu</h2>
         <div class="clr"></div>
         <ul class="sb_menu">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/logout">Logout</a></li>
+		  <% if session[:user_id] %>
+          	<li><a href="/logout">Logout</a></li>
+		  <% else %>
+			<li><a href="/login">Login</a></li>
+		  <% end %>
           <li><a href="#">Admin</a></li>
           <li><a href="marketing_path">Marketing Tips</a></li>
           <li><a href="/articles">Library</a></li>
