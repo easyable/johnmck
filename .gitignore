@@ -3,3 +3,4 @@ db/*.sqlite3
 log/*.log
 tmp/
 mailer/mailer.rb
+config/initializers/setup_mail.rb
