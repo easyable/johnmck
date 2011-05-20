@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_filter :load_article, :except => :destroy
-  before_filter :notify_admin
   
   def create
     @comment = @article.comments.new(params[:comment])
@@ -22,10 +21,6 @@ class CommentsController < ApplicationController
     def load_article
       @article = Article.find(params[:article_id])
     end
-    
-    def notify_admin
-        #email Admin
-    end 
 end
 
 

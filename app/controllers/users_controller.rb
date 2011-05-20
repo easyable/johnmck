@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       redirect_to articles_path, :notice => 'Updated user information successfully.'
     else
-      render :action=> 'edit'
+      render :action => 'edit'
     end
   end    
 end

@@ -6,6 +6,6 @@ class Mailer < ActionMailer::Base
       @email = contact[:email]
       @company = contact[:company]
       @message = contact[:message]
-      mail(:to => "John McKelvie <brian@cicutti.com>", :subject=>"Message from website contact form")
+      mail(:to => "John McKelvie <easyable01@gmail.com", :subject=>"Message from website contact form")
   end
 end

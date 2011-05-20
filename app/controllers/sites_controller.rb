@@ -4,8 +4,8 @@ class SitesController < ApplicationController
    
   end
   
-  def marketing
-      
+  def marketing   
+  @article = Article.last    
   end
   
   def about
