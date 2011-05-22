@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       # notify Admin to approve
       redirect_to @article, :notice => ' Thanks for your comment. It will appear in a day or two'
     else
-      redirect_to @article, :alert => ' Unable to add comment'
+      redirect_to @article, :alert => ' Unable to add your comment'
     end
   end
   

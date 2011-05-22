@@ -1,7 +1,7 @@
-<div class="article"><%@article = Article.last %>
+<div class="article"><%@article = Article.first %>
   <h2><span><%=@article.title%></span></h2>
   <div class="clr"></div>
-  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories.name %>, <a href >marketing tip</a></p
+  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories %>, <a href >marketing tip</a></p
   <p><%=@article.body %></p>
   <p>Tagged: <a href="#">orci</a>, <a href="#">lectus</a>, <a href="#">varius</a>, <a href="#">turpis</a></p>
   <p><a href="#"><strong>Comments (3)</strong></a> <span>&nbsp;&bull;&nbsp;</span> May 27, 2010 <span>&nbsp;&bull;&nbsp;</span> <a href="#"><strong>Edit</strong></a></p>
@@ -25,11 +25,11 @@
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.</p>
   </div>
 </div>
+
 <div class="article">
   <h2><span>Leave a</span> Comment</h2>
   <div class="clr"></div>
-  
-  <%= form_for([@article, @article.comments.new]) do |f| %>
+<%= form_for([@article, @article.comments.new]) do |f| %>
     <ol>
       <li>
         <label for="name">Name (required)</label>
@@ -51,5 +51,5 @@
         <input type="image" name="imageField" id="imageField" src="images/submit.gif" class="send" />
         <div class="clr"></div>
       </li>
-    </ol>
-<% end %>
+    </ol>  
+<% end %>  

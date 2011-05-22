@@ -59,6 +59,8 @@
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
+		<%= content_tag :p, notice, :class => 'notice' if notice.present? %> 
+		<%= content_tag :p, alert, :class => 'alert' if alert.present? %>
 		<%= yield %>
 	  </div>
 	</div>
@@ -82,7 +84,7 @@
 			<li><a href="/login">Login</a></li>
 		  <% end %>
           <li><a href="#">Admin</a></li>
-          <li><a href="marketing_path">Marketing Tips</a></li>
+          <li><a href="/marketing_path">Marketing Tips</a></li>
           <li><a href="/articles">Library</a></li>
           <li><a href="#">Video Archives</a></li>
         </ul>

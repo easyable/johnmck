@@ -1,6 +1,7 @@
 <%= div_for article do %>
   <h3>
-    <%= link_to article.title, article %>    
+    <%= link_to article.title, article %>
+    <%= article.published_at %>    
     <% if current_user %> 
       <span class='actions'>
         <%= link_to "Edit", edit_article_path(article) %>

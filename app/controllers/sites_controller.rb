@@ -5,7 +5,7 @@ class SitesController < ApplicationController
   end
   
   def marketing      
-    
+    @article = Article.first
   end
   
   def about
