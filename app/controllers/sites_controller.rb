@@ -4,8 +4,8 @@ class SitesController < ApplicationController
    
   end
   
-  def marketing   
-  @article = Article.last    
+  def marketing      
+    
   end
   
   def about
@@ -18,7 +18,7 @@ class SitesController < ApplicationController
     if request.post?
         Mailer.interest(params[:contact]).deliver
         flash[:notice] = "Your message has been sent, you should hear from us shortly!"
-        redirect_to :action=>'contact'
+        redirect_to :action =>'contact'
     end
   end
   

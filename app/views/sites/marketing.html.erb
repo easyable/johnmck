@@ -1,8 +1,8 @@
-<div class="article">
-  <h2><span>Another Great Marketing</span> Tip</h2>
+<div class="article"><%@article = Article.last %>
+  <h2><span><%=@article.title%></span></h2>
   <div class="clr"></div>
-  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <a href="#">templates</a>, <a href="#">internet</a></p
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. </p>
+  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories.name %>, <a href >marketing tip</a></p
+  <p><%=@article.body %></p>
   <p>Tagged: <a href="#">orci</a>, <a href="#">lectus</a>, <a href="#">varius</a>, <a href="#">turpis</a></p>
   <p><a href="#"><strong>Comments (3)</strong></a> <span>&nbsp;&bull;&nbsp;</span> May 27, 2010 <span>&nbsp;&bull;&nbsp;</span> <a href="#"><strong>Edit</strong></a></p>
 </div>
@@ -28,27 +28,28 @@
 <div class="article">
   <h2><span>Leave a</span> Comment</h2>
   <div class="clr"></div>
-  <form action="#" method="post" id="leavereply">
+  
+  <%= form_for([@article, @article.comments.new]) do |f| %>
     <ol>
       <li>
         <label for="name">Name (required)</label>
-        <input id="name" name="name" class="text" />
+        <%= f.text_field :name %>
       </li>
       <li>
         <label for="email">Email Address (required)</label>
-        <input id="email" name="email" class="text" />
+        <%= f.text_field :email %>
       </li>
       <li>
-        <label for="website">Company</label>
-        <input id="website" name="website" class="text" />
+        <label for="company">Company</label>
+        <%= f.text_field :company %>
       </li>
       <li>
         <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="8" cols="50"></textarea>
+        <%= f.text_area :body %>
       </li>
       <li>
         <input type="image" name="imageField" id="imageField" src="images/submit.gif" class="send" />
         <div class="clr"></div>
       </li>
     </ol>
-  </form>
+<% end %>
