@@ -25,11 +25,12 @@ class SitesController < ApplicationController
   def services
     @title = "Services"
   end
-    
+  
+  def approvals
+    @comments = Comment.find(:all, :conditions => ['approved = ?', "false"], :order => 'created_at DESC')  
   #def approvals
   #  @title = "Approvals Page"
   #  @current_user = current_user
   #  @comments = Comment.find(:all, :conditions => ['approved = ?', "false"], :order => 'created_at DESC')
-  #end
-
+  end
 end

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
                        :if => :password_required?
   
   has_many :articles, :order => 'created_at DESC, title ASC',
-                      :dependent => :nullify
+                      :dependent => :destroy
   has_many :replies, :through => :articles, :source => :comments
   
   before_save :encrypt_new_password

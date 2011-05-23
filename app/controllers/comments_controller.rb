@@ -12,9 +12,27 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    @comment = @article.comments.find(params[:id])
-    @comment.destroy
-    redirect_to @article, :notice => 'Comment deleted' 
+      @article.comment = current_user.articles.comment.find(params[:id])
+      @comment.destroy
+
+      respond_to do |format|
+        format.html { redirect_to(articles_url) }
+        format.xml { head :ok }
+  end
+  def show
+     @comments = Comments.where(:article_id => @article.id)
+
+     respond_to do |format|
+       format.html # show.html.erb
+       format.xml { render :xml => @article }
+     end
+  end
+  
+  
+  def approve
+    @comment.approved = 'true'
+    @comment.save
+    redirect_to @article, :notice=> ' has been approved.' 
   end
   
   private

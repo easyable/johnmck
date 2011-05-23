@@ -1,11 +1,14 @@
 <%= div_for comment do %>
   <h3>
-    <%= comment.name %> &lt;<%= comment.email %>&gt; said: 
-    <% if current_user %>
+     <% if current_user %>
+       <%= comment.name %> &lt;<%= comment.email %>&gt; said:
       <span class='actions'>
-	    <%= link_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete %>
+	  <%= link_to 'Approve', {:controller=>'comments', :action=>'approve', :id => comment.id} %>    
+	  <%= link_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete %>	 
 	  </span>
-	<% end %>
   </h3>
-     <%= comment.body %>
+	<%= comment.body %>
+	<% end %>
+  
+     
 <% end %>

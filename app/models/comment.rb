@@ -21,9 +21,10 @@ class Comment < ActiveRecord::Base
  
 
   
-  before_create :init
+  after_create :init
 
   def init
     self.approved = 'false'
+    self.save
   end      
 end
