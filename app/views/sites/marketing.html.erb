@@ -1,5 +1,5 @@
-<div class="article"><%@article = Article.first %>
-  <h2><span><%=@article.title%></span></h2>
+<div class="article">
+  <h2><span><%= @article.title %></span></h2>
   <div class="clr"></div>
   <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories %>, <a href >marketing tip</a></p
   <p><%=@article.body %></p>

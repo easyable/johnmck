@@ -1,14 +1,20 @@
 <%= div_for comment do %>
   <h3>
+	 <% if comment.approved or current_user %>
+     <%= comment.name %> &lt;<%= comment.email %>&gt; said:
      <% if current_user %>
-       <%= comment.name %> &lt;<%= comment.email %>&gt; said:
-      <span class='actions'>
-	  <%= link_to 'Approve', {:controller=>'comments', :action=>'approve', :id => comment.id} %>    
-	  <%= link_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete %>	 
-	  </span>
+	      <span class='actions'>		
+		  <% if comment.approved %>
+			<%= link_to 'Unapprove', {:controller=>'comments', :action=>'unapprove', :id => comment.id}, :class=>'ajax', :remote=>true %>    
+		  <% else %>
+		  	<%= link_to 'Approve', {:controller=>'comments', :action=>'approve', :id => comment.id} %>
+	      <% end %>
+		  <%= link_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete %>	 
+		  </span>
+   	  <% end %>
+	
   </h3>
 	<%= comment.body %>
-	<% end %>
-  
+    <% end %>
      
 <% end %>
