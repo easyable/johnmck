@@ -1,7 +1,7 @@
 <%= div_for comment do %>
   <h3>
 	 <% if comment.approved or current_user %>
-     <%= comment.name %> &lt;<%= comment.email %>&gt; said:
+     <%= comment.name %> &lt;<%= comment.email %>&gt; Says:
      <% if current_user %>
 	      <span class='actions'>		
 		  <% if comment.approved %>
@@ -9,10 +9,9 @@
 		  <% else %>
 		  	<%= link_to 'Approve', {:controller=>'comments', :action=>'approve', :id => comment.id} %>
 	      <% end %>
-		  <%= link_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete %>	 
+		  <%= button_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete %>	 
 		  </span>
-   	  <% end %>
-	
+   	  <% end %>	
   </h3>
 	<%= comment.body %>
     <% end %>

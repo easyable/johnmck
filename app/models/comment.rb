@@ -8,18 +8,12 @@ class Comment < ActiveRecord::Base
   scope :is_approved, where("comments.approved IS true") 
   scope :not_approved, where("comments.approved IS false")
   
-  def reply()
-    @name = marketing[:name]
-    @email = marketing[:email]
-    @company = marketing[:company]
-    @message = marketing[:message]
-  end
   
   def comment_should_be_approved
       errors.add(:comment_id, "is not approved yet") if comment && !comment.is_approved?
   end
  
-
+  
   
   after_create :init
 

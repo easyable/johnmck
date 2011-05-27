@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
                        :presence => true,
                        :if => :password_required?
   
-  has_many :articles, :order => 'created_at DESC, title ASC',
+  has_many :articles, :order => 'published_at DESC, title ASC',
                       :dependent => :destroy
   has_many :replies, :through => :articles, :source => :comments
   

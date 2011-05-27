@@ -3,7 +3,6 @@ Johnmck::Application.routes.draw do
   resources :articles do
     resources :comments
   end
-  resources :comments
   resources :users
   resource :session
   

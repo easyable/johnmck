@@ -1,15 +1,18 @@
 <div class="article">
   <h2><span><%= @article.title %></span></h2>
   <div class="clr"></div>
-  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories %>, <a href >marketing tip</a></p
+  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories.name %>, <a href >marketing tip</a></p
   <p><%=@article.body %></p>
   <p>Tagged: <a href="#">orci</a>, <a href="#">lectus</a>, <a href="#">varius</a>, <a href="#">turpis</a></p>
-  <p><a href="#"><strong>Comments (3)</strong></a> <span>&nbsp;&bull;&nbsp;</span> May 27, 2010 <span>&nbsp;&bull;&nbsp;</span> <a href="#"><strong>Edit</strong></a></p>
+  <p><a href="#"><strong>Comments, (<%=@article.comments.count %>)</strong></a> <span>&nbsp;&bull;&nbsp;</span><%= @article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
 </div>
 <div class="article">
-  <h2><span>3</span> Responses</h2>
+  <h2></span> Responses</h2>
   <div class="clr"></div>
-  <div class="comment"> <a href="#"><img src="images/userpic.gif" width="40" height="40" alt="" class="userpic" /></a>
+  <div id="comments"> 
+    <%= render @article.comments %>
+ </div>
+<div class="comment"> <a href="#"><img src="images/userpic.gif" width="40" height="40" alt="" class="userpic" /></a>
     <p><a href="#">admin</a> Says:<br />
       April 20th, 2009 at 2:17 pm</p>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum.</p>
@@ -48,7 +51,10 @@
         <%= f.text_area :body %>
       </li>
       <li>
-        <input type="image" name="imageField" id="imageField" src="images/submit.gif" class="send" />
+        <input type="image" name="imageField" id="imageField" src="images/submit.gif" class="send"/>
+        <div class="actions">
+		    <%= f.submit 'Add' %>
+		  </div>
         <div class="clr"></div>
       </li>
     </ol>  

@@ -1,23 +1,21 @@
 class CommentsController < ApplicationController
-  before_filter :load_article, :except => [:destroy, :approve, :unapprove]
-  
-  def create
+  before_filter :load_article, :except =>  [:create, :destroy, :approve, :unapprove]
+ 
+  def create 
+    @article = Article.find(params[:article_id])
     @comment = @article.comments.new(params[:comment])
-    if @comment.save
-      redirect_to @article, :notice => ' Thanks for your comment. It will appear in a day or two'
-    else
-      redirect_to @article, :alert => ' Unable to add your comment'
-    end
-  end
-  
-  def destroy
-      @article.comment = current_user.articles.comment.find(params[:id])
-      @comment.destroy
-
-      respond_to do |format|
-        format.html { redirect_to(articles_url) }
-        format.xml { head :ok }
+      if @comment.save
+        redirect_to @article, :notice => 'Thanks for your comment'
+      else
+        redirect_to @article, :alert => 'Unable to add comment' 
       end
+  end
+    
+  def destroy
+    @article = current_user.articles.find(params[:article_id])
+    @comment = @article.comments.find(params[:id]) 
+    @comment.destroy   
+    redirect_to @article, :notice => 'Comment deleted'
   end
   
   def show
@@ -44,11 +42,9 @@ class CommentsController < ApplicationController
       article = Article.find(:all, :conditions=>["id = ?", comment.article_id])
       redirect_to article, :notice=> ' has been unapproved.'
   end
-  
   private
-    def load_article
-      @article = Article.find(params[:id])
-    end
+  def load_article
+    @article = Article.find(params[:article_id])
+  end
 end
-
 
