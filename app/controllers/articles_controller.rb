@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   def index
     @articles = Article.all
-
+    @articles = Article.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @articles }

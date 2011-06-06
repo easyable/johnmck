@@ -6,6 +6,13 @@ class Article < ActiveRecord::Base
   has_many :comments
 
   scope :where_title, lambda { |term| where("articles.title LIKE ?", "%#(term)%") }
+  def self.search(search)
+    if search      
+      find(:all, :conditions => ['title LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
   
   def long_title
      "#{title} - #{published_at}"

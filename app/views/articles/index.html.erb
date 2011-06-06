@@ -1,4 +1,10 @@
 <h1>Library</h1>
+<%= form_tag articles_path, :method=>'get' do %>
+<p>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Search Articles", :name => nil %>
+</p>
+<% end %>
 
 <div id="articles">
   <%= render @articles %>
