@@ -77,7 +77,7 @@
 </div>
     <div class="sidebar">
       <div class="searchform">
- 	  	<%= form_tag articles_path, :id=>"formsearch", :name=>"Search by Title or Content:", :method=>'get' do %>
+ 	  	<%= form_tag articles_path, :id=>"formsearch", :name=>"Search by Title or Content :", :method=>'get' do %>
 		<span>
 			<%= text_field_tag :search, params[:search], :class=>"editbox_search", :id=>"editbox_search", :maxlength=>"80", :value=>"Search by Title or Content:", :onclick=>"this.value='';"%>
 			<input name="button_search" src="images/search.gif" class="button_search" type="image"/>
