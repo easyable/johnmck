@@ -10,5 +10,9 @@
       </span>
     <% end %>
   </h3>
-  <%= simple_format article.body %>
+  <%= article.published_at %>  
+  <%= simple_format raw(article.body) %>  
+<% end %>
+  <% if article.tag_list.present? %> 
+  <small>Tags: <%= article.tag_list %></small>
 <% end %>

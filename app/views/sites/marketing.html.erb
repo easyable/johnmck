@@ -3,7 +3,9 @@
   <div class="clr"></div>
   <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= @article.categories.name %>, <a href >marketing tip</a></p
   <p><%=@article.body %></p>
-  <p>Tagged: <a href="#">orci</a>, <a href="#">lectus</a>, <a href="#">varius</a>, <a href="#">turpis</a></p>
+  <p><% if @article.tag_list.present? %> 
+     <medium>Tagged: <%= @article.tag_list %></medium>
+     <% end %></p>
   <p><a href="#"><strong>Comments, (<%=@article.comments.count %>)</strong></a> <span>&nbsp;&bull;&nbsp;</span><%= @article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
 </div>
 <div class="article">

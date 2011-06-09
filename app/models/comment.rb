@@ -12,8 +12,6 @@ class Comment < ActiveRecord::Base
   def comment_should_be_approved
       errors.add(:comment_id, "is not approved yet") if comment && !comment.is_approved?
   end
- 
-  
   
   after_create :init
 

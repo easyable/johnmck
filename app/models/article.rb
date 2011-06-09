@@ -5,18 +5,22 @@ class Article < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_many :comments
 
+  acts_as_taggable
   
-  def self.search(search)
-    if search      
-      find(:all, :conditions => [ 'title LIKE ? OR body LIKE ?',"%#{search}%", "%#{search}%"])
-    else
-      find(:all)
-    end
-  end
+  scope :where_title, lambda { |term| where("articles.title LIKE ?", "%#{term}%") }
   
   def long_title
      "#{title} - #{published_at}"
   end
+  
+  def self.search(search)
+    if search      
+      find(:all, :conditions => ['title LIKE ? OR body LIKE ?',"%#{search}%", "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+    
   def current_user
      return false unless current_user.is_a? User
      user == current_user

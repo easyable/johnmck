@@ -13,7 +13,7 @@
 		  </span>
    	  <% end %>	
   </h3>
-	<%= comment.body %>
+	<%= simple_format raw(comment.body) %>
     <% end %>
      
 <% end %>
