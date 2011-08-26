@@ -6,14 +6,14 @@ body {
 	width:100%;
 	color:#6d6d6d;
 	font:normal 12px/1.5em "Liberation sans", Arial, Helvetica, sans-serif;
-	background:#eceff4 url(/images/main_bg.gif) repeat-x left top;
+	background:#eceff4 url(../images/main_bg.gif) repeat-x left top;
 }
 html, .main {
 	padding:0;
 	margin:0;
 }
 .main {
-	background:url(/images/header_bg.jpg) no-repeat center top;
+	background:url(../images/header_bg.jpg) no-repeat center top;
 }
 .clr {
 	clear:both;
@@ -53,7 +53,7 @@ a {
 	padding:0;
 	float:left;
 	width:auto;
-	height:106px;
+	height:156px;
 }
 h1 {
 	margin:0;
@@ -138,12 +138,12 @@ h1 small {
 	text-decoration:none;
 	text-transform:none;
 	text-align:center;
-	background:url(/images/menu_p.gif) no-repeat center top;
+	background:url(../images/menu_p.gif) no-repeat center top;
 }
 .menu_nav ul li.active a, .menu_nav ul li a:hover {
 	text-decoration:none;
 	color:#fff;
-	background:url(/images/menu_a.gif) no-repeat center top;
+	background:url(../images/menu_a.gif) no-repeat center top;
 }
 .content {
 	padding:0;
@@ -197,7 +197,7 @@ h1 small {
 .content .sidebar .gadget {
 	margin:0 0 12px;
 	padding:16px 20px;
-	background:#dbe2ec url(/images/gadget_bg.gif) repeat-x left bottom;
+	background:#dbe2ec url(../images/gadget_bg.gif) repeat-x left bottom;
 	border:2px solid #fff;
 }
 .content .sidebar h2 {
@@ -278,7 +278,7 @@ p.infopost a.com span {
 	color:#1941a4;
 	text-decoration:none;
 	text-align:center;
-	background:url(/images/readmore.gif) no-repeat center top;
+	background:url(../images/readmore.gif) no-repeat center top;
 }
 .content p.pages {
 	margin:0;
@@ -317,7 +317,7 @@ p.infopost a.com span {
 	float:left;
 }
 .fbg {
-	background:#0f3d9f url(/images/fbg_bg.gif) repeat-x left top;
+	background:#0f3d9f url(../images/fbg_bg.gif) repeat-x left top;
 }
 .fbg_resize {
 	margin:0 auto;
@@ -366,7 +366,7 @@ p.infopost a.com span {
 	padding:2px 0 2px 12px;
 	color:#e7eff1;
 	text-decoration:none;
-	background:url(/images/li.gif) no-repeat left center;
+	background:url(../images/li.gif) no-repeat left center;
 }
 .fbg .fbg_ul li a:hover {
 	color:#43d8ff;
@@ -434,7 +434,7 @@ ol li .send {
 	margin:0;
 	padding:0;
 	float:left;
-	background:url(/images/search_bg.gif) no-repeat left top;
+	background:url(../images/search_bg.gif) no-repeat left top;
 }
 #formsearch input.editbox_search {
 	margin:0;

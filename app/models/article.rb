@@ -9,10 +9,6 @@ class Article < ActiveRecord::Base
   
   scope :where_title, lambda { |term| where("articles.title LIKE ?", "%#{term}%") }
   
-  def long_title
-     "#{title} - #{published_at}"
-  end
-  
   def self.search(search)
     if search      
       find(:all, :conditions => ['title LIKE ? OR body LIKE ?',"%#{search}%", "%#{search}%"])
