@@ -3,7 +3,13 @@
 <h2><span><%=article.title %></span></h2>
 <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments <span>11</span></a></p>
 <div class="clr"></div>
-<div class="img"><iframe width="236" height="205" src="http://www.youtube.com/embed/<%= article.videntifier %>"frameborder="0" allowfullscreen></iframe /></div>
+<div class="img">
+<% if article.vlocation %>
+<iframe width="236" height="205" src="http://www.youtube.com/embed/<%= article.videntifier %>"frameborder="0" allowfullscreen></iframe />
+<% else %>
+<%= image_tag('/images/img2.jpg')%>
+<% end %>
+</div>
 <div class="post_content">
 <p><%= article.body %></p>
 </div>
