@@ -30,10 +30,18 @@
   <div class="field">
     <%= f.label :tag_list %><br /> 
     <%= f.text_field :tag_list %>
-</div>
+  </div>
   <div class="field">
     <%= f.label :published_at %><br />
     <%= f.datetime_select :published_at %>
+  </div>
+  <div class="field">
+    <%= f.label :vlocation %><br />
+    <%= f.text_field :vlocation %>
+  </div>
+  <div class="field">
+    <%= f.label :vdescription %><br />
+    <%= f.text_field :vdescription %>
   </div>
   <div class="actions">
     <%= submit_or_cancel(f) %>

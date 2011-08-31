@@ -26,4 +26,18 @@ class Article < ActiveRecord::Base
     return false unless owner.is_a? current_user
     current_user == owner
   end
+  
+  def videntifer(str)
+    str = self.vlocation
+    if str.include? 'v='
+      index = str.index('v=')
+      str = str.last(str.length - index)
+      str = str.last(str.length - 2)
+    end
+    if str.include? '&'
+      index = str.index('&')
+       str = str.first(index)
+    end
+    return str
+  end
 end

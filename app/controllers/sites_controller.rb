@@ -1,5 +1,9 @@
 class SitesController < ApplicationController
 
+  def home
+    @article = Article.last
+  end
+
   def index
    
   end
