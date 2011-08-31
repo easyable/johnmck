@@ -27,7 +27,7 @@ class Article < ActiveRecord::Base
     current_user == owner
   end
   
-  def self.videntifier
+  def videntifier
     str = self.vlocation
     if str.include? 'v='
       index = str.index('v=')
