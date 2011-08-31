@@ -2,7 +2,7 @@ class SitesController < ApplicationController
 
   def home
     @article = Article.last
-    @articles = Article.all.page(params[:page]).per(2)
+    @articles = Article.order("created_at DESC").page(params[:page]).per(2)
   end
 
   def index
