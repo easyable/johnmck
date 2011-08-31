@@ -7,7 +7,7 @@
 <p><%= @article.body %></p>
 </div>
 <div class="clr"></div>
-<p class="spec"><a href="#"class="rm">Read more</a></p>
+<p class="spec"><%= link_to "Read more", @article, :class=>"rm"%></p>
 <div class="clr"></div>
 </div>
 <div class="article">
@@ -20,7 +20,7 @@
 <p><strong>Aenean consequat porttitor adipiscing. Nam pellentesque justo ut tortor congue lobortis. Donec venenatis sagittis fringilla.</strong> Etiam nec libero magna, et dictum velit. Proin mauris mauris, mattis eu elementum eget, commodo in nulla. Mauris posuere venenatis pretium. Maecenas a dui sed lorem aliquam dictum. Nunc urna leo, imperdiet eu bibendum ac, pretium ac massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Quisque condimentum luctus ullamcorper.</p>
 </div>
 <div class="clr"></div>
-<p class="spec"><%= link_to "Read more", @article, :class=>"rm"%></p>
+<p class="spec"><a href="#"class="rm">Read more</a></p>
 <div class="clr"></div>
 </div>
 <p class="pages"><small>Page 1 of 2</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
