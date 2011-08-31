@@ -27,7 +27,7 @@ class Article < ActiveRecord::Base
     current_user == owner
   end
   
-  def videntifer
+  def self.videntifer
     str = self.vlocation
     if str.include? 'v='
       index = str.index('v=')
