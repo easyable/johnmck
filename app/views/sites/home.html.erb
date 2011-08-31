@@ -4,11 +4,12 @@
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
   <div class="clr"></div>
   <div class="img">
-    <% if article.vlocation %>
+  <% if article.vlocation?%>  
+  <% article.vlocation %>
     <iframe width="236" height="205" src="http://www.youtube.com/embed/<%= article.videntifier %>"frameborder="0" allowfullscreen></iframe />
     <p><%= article.vdescription %></p>
   <% else %>
-    <%= image_tag('/images/img2.jpg', :width=>"236", :height=>"205") %>
+     <%= image_tag('/images/img2.jpg', :width=>"236", :height=>"205") %>
   <% end %>
   </div>
   <div class="post_content">
