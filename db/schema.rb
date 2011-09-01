@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20110901132704) do
     t.integer  "user_id"
     t.string   "vlocation"
     t.text     "vdescription"
-    t.string   "introduction"
+    t.text     "introduction"
   end
 
   create_table "articles_categories", :id => false, :force => true do |t|

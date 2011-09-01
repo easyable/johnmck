@@ -1,6 +1,6 @@
 class AddIntroductionToArticles < ActiveRecord::Migration
   def self.up
-    add_column :articles, :introduction, :string
+    add_column :articles, :introduction, :text
   end
 
   def self.down
