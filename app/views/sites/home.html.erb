@@ -10,10 +10,10 @@
     <p><%= article.vdescription %></p>
   <% else %>
      <%= image_tag('/images/img2.jpg', :width=>"236", :height=>"205") %>
-  <% end %>
-  </div>
+  <% end %>  
+</div>
   <div class="post_content">
-    <p><%= article.body %></p>
+    <p><%= article.introduction %></p>
   </div>
   <div class="clr"></div>
   <p class="spec"><%= link_to "Read more", article, :class=>"rm"%></p>
