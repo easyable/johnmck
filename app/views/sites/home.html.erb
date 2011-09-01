@@ -13,7 +13,9 @@
   <% end %>  
 </div>
   <div class="post_content">
+	<% if article.introduction?%>
     <p><%= article.introduction %></p>
+  <% end %>
   </div>
   <div class="clr"></div>
   <p class="spec"><%= link_to "Read more", article, :class=>"rm"%></p>
