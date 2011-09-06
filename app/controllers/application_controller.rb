@@ -1,6 +1,17 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  def marketing_articles
+      @category = Category.find_by_name("Marketing Tips")
+      @category.articles
+    end
   
+  def full_articles
+     @article = Article.all
+     @article - marketing_articles
+  end
+  
+   
+   
     protected
       # Returns the currently logged in user or nil if there isn't one
       def current_user

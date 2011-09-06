@@ -1,8 +1,11 @@
 class SitesController < ApplicationController
 
   def home
-    @article = Article.last
-    @articles = Article.order("created_at DESC").page(params[:page]).per(2)   
+    if full_articles.present?
+      @article = full_articles
+    else
+      @article = marketing_articles
+    end  
   end
 
   def index
@@ -10,7 +13,8 @@ class SitesController < ApplicationController
   end
   
   def marketing      
-    @article = Article.last
+    @article = marketing_articles.last
+    
   end
   
   def about
@@ -38,4 +42,13 @@ class SitesController < ApplicationController
   #  @current_user = current_user
   #  @comments = Comment.find(:all, :conditions => ['approved = ?', "false"], :order => 'created_at DESC')
   end
+  def marketing_articles
+    @category = Category.find_by_name("Marketing Tips")
+    @category.articles
+  end
+  
+  def full_articles
+    @article = Article.all
+    @article - marketing_articles
+  end 
 end
