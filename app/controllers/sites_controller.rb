@@ -1,9 +1,7 @@
 class SitesController < ApplicationController
 
   def home
-    @marketing_articles = Article.where(:name=>"Marketing Tips")
-    @full_articles = Article.all - @marketing_articles
-    
+   
   end
 
   def index
@@ -40,13 +38,4 @@ class SitesController < ApplicationController
   #  @current_user = current_user
   #  @comments = Comment.find(:all, :conditions => ['approved = ?', "false"], :order => 'created_at DESC')
   end
-  def marketing_articles
-    @category = Category.find_by_name("Marketing Tips")
-    @category.articles
-  end
-  
-  def full_articles
-    @article = Article.all
-    @article - marketing_articles
-  end 
 end
