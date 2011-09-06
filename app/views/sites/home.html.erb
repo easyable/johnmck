@@ -1,4 +1,4 @@
-<% full_articles.last %>
+<% article = @full_articles.last %>
 <div class="article">
   <h2><span><%= article.title %></span></h2>
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
@@ -20,10 +20,9 @@
   <div class="clr"></div>
   <p class="spec"><%= link_to "Read More", article, :class=>"rm"%></p>
   <div class="clr"></div>
-<% end %>
 
 
-<% marketing_articles%>
+<% article = @marketing_articles.last %>
 <div class="article">
   <h2><span><%= article.title %></span></h2>
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
@@ -44,7 +43,6 @@
   <div class="clr"></div>
   
 </div>
-<% end %>  
 <p class="pages"><small>Page 1 of 2</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
 
 
