@@ -1,11 +1,9 @@
 class SitesController < ApplicationController
 
   def home
-    if full_articles.present?
-      @article = full_articles
-    else
-      @article = marketing_articles
-    end  
+    @marketing_articles = Article.where(:name=>"Marketing Tips")
+    @full_articles = Article.all - @marketing_articles
+    
   end
 
   def index

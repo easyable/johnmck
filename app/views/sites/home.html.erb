@@ -5,7 +5,7 @@
   <div class="clr"></div>
   <div class="img">
   <% if article.vlocation?%>  
-  <% article.vlocation %>
+  <%= article.vlocation %>
     <iframe width="236" height="205" src="http://www.youtube.com/embed/<%= article.videntifier %>"frameborder="0" allowfullscreen></iframe />
     <p><%= article.vdescription %></p>
   <% else %>
