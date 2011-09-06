@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
-  
+  @articles = article.order("created_at DESC").page(params[:page]).per(2)
   # GET /articles
   # GET /articles.xml
   def index
