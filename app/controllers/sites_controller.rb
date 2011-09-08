@@ -1,7 +1,9 @@
 class SitesController < ApplicationController
 
   def home
-   
+    
+    @marketing_articles = marketing_articles
+    @full_articles = full_articles
   end
 
   def index

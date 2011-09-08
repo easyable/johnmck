@@ -1,29 +1,27 @@
-  <% article = @full_articles.last %>
-<div class="article">
+  
+<div class="article"> 
+	<% article = @full_articles.last %> 
   <h2><span><%= article.title %></span></h2>
-  <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
+  <div><p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p></div> 
   <div class="clr"></div>
   <div class="img">
-  <% if article.vlocation?%>  
-  <%= article.vlocation %>
+    <% if article.vlocation?%>  
     <iframe width="236" height="205" src="http://www.youtube.com/embed/<%= article.videntifier %>"frameborder="0" allowfullscreen></iframe />
-    <p><%= article.vdescription %></p>
-  <% else %>
-     <%= image_tag('/images/img2.jpg', :width=>"236", :height=>"205") %>
-  <% end %>  
+      <p><%= article.vdescription %></p>
+    <% else %>
+      <%= image_tag('/images/img2.jpg', :width=>"236", :height=>"205") %>
+    <% end %>  
   </div>
   <div class="post_content">
-  <% if article.introduction?%>
     <p><%= article.introduction %></p>
-  <% end %>
   </div>
   <div class="clr"></div>
-  <p class="spec"><%= link_to "Read More", article, :class=>"rm"%></p>
+    <p class="spec"><%= link_to "Read More", article, :class=> "rm" %></p>
   <div class="clr"></div>
 
-
-  <% article = @marketing_articles.last %>
+  
 <div class="article">
+  <% article = @marketing_articles.last %>
   <h2><span><%= article.title %></span></h2>
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
   <div class="clr"></div>
@@ -37,9 +35,7 @@
   <% end %>
   </div>  
   <div class="post_content">
-	<% if article.body? %>
-      <p><%= article.body %></p>
-    <% end %>
+    <p><%= article.body %></p>
   <div class="clr"></div>
 
 </div>

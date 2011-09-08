@@ -3,11 +3,10 @@ class ApplicationController < ActionController::Base
   def marketing_articles
       @category = Category.find_by_name("Marketing Tips")
       @category.articles
-    end
+  end
   
   def full_articles
-     @article = Article.all
-     @article - marketing_articles
+     @article = Article.all - marketing_articles
   end
   
    

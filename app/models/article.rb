@@ -11,7 +11,7 @@ class Article < ActiveRecord::Base
   
   def self.search(search)
     if search      
-      find(:all, :conditions => ['title LIKE ? OR body LIKE ?',"%#{search}%", "%#{search}%"])
+      find(:all, :conditions => ['title LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
     else
       find(:all)
     end

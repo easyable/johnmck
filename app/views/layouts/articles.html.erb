@@ -9,12 +9,6 @@
 <%= javascript_include_tag 'droid_sans_400-droid_sans_700.font'%>
 <%= javascript_include_tag 'script'%>
 <%= javascript_include_tag 'coin-slider.min'%>
-<%= javascript_include_tag 'nicEdit'%>
-<script type="text/javascript">
-	$(document).ready(function() {
-		 nicEditors.allTextAreas();
-	});
-</script>
 </head>
  <body>
  <div class="main">
@@ -97,9 +91,9 @@
         <div class="clr"></div>
         <ul class="sb_menu">
           <% if session[:user_id] %>
-           <li><a href="/logout">Logout</a></li>
+            <li><a href="/logout">Logout</a></li>
           <% else %>
-           <li><a href="/login">Login</a></li>
+            <li><a href="/login">Login</a></li>
           <% end %>
           <li><a href="#">Facebook</a></li>
           <li><a href="/marketing_path">Marketing Tips</a></li>
