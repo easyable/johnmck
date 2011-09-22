@@ -81,7 +81,7 @@
 		  	<%= form_tag articles_path, :id=>"formsearch", :name=>"Search by Title or Content:", :method=>'get' do %>
 			<span>
 				<%= text_field_tag :search, params[:search], :class=>"editbox_search", :id=>"editbox_search", :maxlength=>"80", :value=>"Search by Title or Content:", :onclick=>"this.value='';"%>
-				<%= submit_tag "Button Search",:name=>"button_search", :src=>"/images/search.gif", :class=>"button_search", :type=>"image"%>
+				<%= submit_tag "Button Search", :name=>"button_search", :src=>"images/search.gif", :class=>"button_search", :type=>"image"%>
 			</span>
 			<% end %>
 	  	</div>
@@ -91,9 +91,9 @@
         <div class="clr"></div>
         <ul class="sb_menu">
           <% if session[:user_id] %>
-            <li><a href="/logout">Logout</a></li>
+           <li><a href="/logout">Logout</a></li>
           <% else %>
-            <li><a href="/login">Login</a></li>
+           <li><a href="/login">Login</a></li>
           <% end %>
           <li><a href="#">Facebook</a></li>
           <li><a href="/marketing_path">Marketing Tips</a></li>

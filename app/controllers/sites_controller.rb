@@ -1,18 +1,19 @@
 class SitesController < ApplicationController
 
   def home
-    
-    @marketing_articles = marketing_articles
-    @full_articles = full_articles
-  end
-
+    @marketing = Category.where(:name=>"Marketing Tips").first.articles.page(params[:page]).per(1) 
+    marketing = Category.where(:name=>"Marketing Tips").first
+    #Figure out how to return AR objects rather than array
+    @articles = Article.where("id NOT IN (?)", marketing.article_ids).page(params[:page]).per(1)
+  end 
   def index
    
   end
   
   def marketing      
-    @article = marketing_articles.last
-    
+      @marketing = Category.where(:name=>"Marketing Tips").first.articles.page(params[:page]).per(5) 
+      marketing = Category.where(:name=>"Marketing Tips").first
+      @article = @marketing.last
   end
   
   def about

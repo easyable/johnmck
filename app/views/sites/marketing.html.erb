@@ -1,21 +1,22 @@
+<% @marketing.each do |article| %>
 <div class="article">
-  
-<h2><span><%= @article.title %></span></h2>
+  <h2><span><%= article.title %></span></h2>
   <div class="clr"></div>
-  <p>Posted by Admin<span>&nbsp;&bull;&nbsp;</span> Filed under Marketing Tip</p
-  <p><%=@article.body %></p>
-  <p><% if @article.tag_list.present? %> 
-     <medium>Tagged: <%= @article.tag_list %></medium>
+  <p>Posted by <a href="#">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under <%= article.categories.name %>, <a href >marketing tip</a></p
+  <p><%=article.body %></p>
+  <p><% if article.tag_list.present? %> 
+     <medium>Tagged: <%= article.tag_list %></medium>
      <% end %></p>
-  <p><a href="#"><strong>Comments, (<%=@article.comments.count %>)</strong></a> <span>&nbsp;&bull;&nbsp;</span><%= @article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
+  <p><a href="#"><strong>Comments, (<%= article.comments.count %>)</strong></a> <span>&nbsp;&bull;&nbsp;</span><%= article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
 </div>
 <div class="article">
   <h2></span> Responses</h2>
   <div class="clr"></div>
   <div id="comments">
-    <%= render @article.comments %>
+    <%= render article.comments %>
  </div>
 </div>
+<% end %>
 <div class="article">
   <h2><span>Leave a</span> Comment</h2>
   <div class="clr"></div>
