@@ -2,8 +2,9 @@ class SitesController < ApplicationController
 
   def home
     
-    @marketing_articles = marketing_articles
-    @full_articles = full_articles
+    category = Category.find(:first, :name=>"marketing tips")
+    @marketing_articles = category.articles.page(params[:page]).per(1)
+    @full_articles = (Article.all - @marketing_articles).page(params[:page]).per(1)
   end
 
   def index
