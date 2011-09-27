@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 <% @articles.each do |article| %>
-<div class="article">
-=======
-  
-<div class="article"> 
-	<% @full_articles.each do |article| %> 
->>>>>>> 9de42e430dc6369218d4c872755c3510e622b7ce
+<div class="article">   
+	<% @articles.each do |article| %> 
   <h2><span><%= article.title %></span></h2>
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
   <div class="clr"></div>
@@ -26,23 +21,14 @@
   <div class="clr"></div>
   <p class="spec"><%= link_to "Read more", article, :class=>"rm"%></p>
   <div class="clr"></div>
-<<<<<<< HEAD
 </div>
 <% end %>
 <p class="pages">
 	<%= paginate @articles %>
 </p>
 
-
-<% @marketing.each do |article| %>
 <div class="article">
-=======
-<% end %>
-<% paginate @full_articles %>
-  
-<div class="article">
-  <% @marketing_articles.each do |article| %>
->>>>>>> 9de42e430dc6369218d4c872755c3510e622b7ce
+  <% @marketing.each do |article| %>
   <h2><span><%= article.title %></span></h2>
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
   <div class="clr"></div>
@@ -58,18 +44,13 @@
   <div class="post_content">
 	<% if article.introduction?%>
     <p><%= article.introduction %></p>
-  <% end %>
+    <% end %>
   </div>
   <div class="clr"></div>
   <div class="clr"></div>
-<<<<<<< HEAD
-=======
 <% end %>
-
-<% paginate @marketing_articles %>
->>>>>>> 9de42e430dc6369218d4c872755c3510e622b7ce
 </div>
-<% end %>
 <p class="pages">
 	<%= paginate @marketing %>
 </p>
+<% end %>
