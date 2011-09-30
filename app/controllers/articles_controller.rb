@@ -79,8 +79,9 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(articles_url) }
-      format.xml { head :ok }
+      format.xml  { head :ok }
     end
   end
+  
 end
 

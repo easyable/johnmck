@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  validates_presence_of :title, :body
+  validates_presence_of :title, :introduction
   
   belongs_to :user
   has_and_belongs_to_many :categories
@@ -22,7 +22,7 @@ class Article < ActiveRecord::Base
      user == current_user
   end
   
-  def owned_by(owner)
+  def owned_by?(owner)
     return false unless owner.is_a? current_user
     current_user == owner
   end

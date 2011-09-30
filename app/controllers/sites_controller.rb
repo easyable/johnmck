@@ -12,7 +12,7 @@ class SitesController < ApplicationController
   end
   
   def marketing      
-      @marketing = Category.where(:name=>"Marketing Tips").first.articles.page(params[:page]).per(5) 
+      @marketing = Category.where(:name=>"Marketing Tips").first.articles.page(params[:page]).per(1) 
       marketing = Category.where(:name=>"Marketing Tips").first
       @article = @marketing.last
   end

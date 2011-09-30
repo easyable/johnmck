@@ -10,9 +10,9 @@
       </span>
     <% end %>
   </h3>
-  <%= article.published_at %>  
+    <% if article.tag_list.present? %> 
+  <medium>Tags:<%= article.tag_list %></medium>
+  <% end %>
   <%= simple_format raw(article.body) %>  
 <% end %>
-  <% if article.tag_list.present? %> 
-  <medium>Tags:<%= article.tag_list %></medium>
-<% end %>
+  

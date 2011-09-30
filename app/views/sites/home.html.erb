@@ -1,6 +1,5 @@
-<% @articles.each do |article| %>
 <div class="article">   
-	<% @articles.each do |article| %> 
+	<% @articles.each do |article| %>
   <h2><span><%= article.title %></span></h2>
   <p class="infopost">Posted <span class="date">on 11 sep 2018</span> by <a href="#">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
   <div class="clr"></div>
@@ -14,8 +13,8 @@
   <% end %>  
 </div>
   <div class="post_content">
-	<% if article.introduction?%>
-    <p><%= article.introduction %></p>
+  <% if article.introduction? %> 
+  <p><%= article.introduction %></p>
   <% end %>
   </div>
   <div class="clr"></div>
@@ -42,15 +41,14 @@
   <% end %>  
 </div>
   <div class="post_content">
-	<% if article.introduction?%>
-    <p><%= article.introduction %></p>
-    <% end %>
+  <% if article.introduction? %>
+  <p><%= article.introduction %></p>
+  <% end %>
   </div>
   <div class="clr"></div>
-  <div class="clr"></div>
-<% end %>
 </div>
+  <% end %>
 <p class="pages">
 	<%= paginate @marketing %>
 </p>
-<% end %>
+    

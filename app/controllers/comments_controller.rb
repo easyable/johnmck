@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_article, :except =>  [:create, :destroy, :approve, :unapprove]
- 
+  before_filter :authenticate, :only => :destroy
   def create 
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(params[:comment])
