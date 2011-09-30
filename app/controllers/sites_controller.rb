@@ -1,10 +1,10 @@
 class SitesController < ApplicationController
 
   def home
-    @marketing = Category.where(:name=>"Marketing Tips").first.articles.page(params[:page]).per(1) 
+    @marketing = Category.where(:name=>"Marketing Tips").first.articles.order('created_at DESC').page(params[:page]).per(1) 
     marketing = Category.where(:name=>"Marketing Tips").first
     #Figure out how to return AR objects rather than array
-    @articles = Article.where("id NOT IN (?)", marketing.article_ids).page(params[:page]).per(1)
+    @articles = Article.where("id NOT IN (?)", marketing.article_ids).order('created_at DESC').page(params[:page]).per(1)
   end 
 
   def index
