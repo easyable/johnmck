@@ -6,3 +6,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "meta_search"
 gem "kaminari"
 
+gem 'acts-as-taggable-on', '~>2.1.0'
+
