@@ -79,7 +79,7 @@
 	</div>
     <div class="sidebar">
       <div class="searchform">
-	  	<%= form_tag articles_path, :id=>"formsearch", :name=>"Search by Title or Content:", :method=>'get' do %>
+	  	<%= form_tag articles_path, :id=>"formsearch", :name=>"Search by Title or Content:", :method=> 'get' do %>
 		<span>
 			<%= text_field_tag :search, params[:search], :class=>"editbox_search", :id=>"editbox_search", :maxlength=>"80", :value=>"Search by Title or Content:", :onclick=>"this.value='';"%>
 			<%= submit_tag "Button Search", :name=>"button_search", :src=>"images/search.gif", :class=>"button_search", :type=>"image"%>
@@ -96,9 +96,9 @@
 		  <% else %>
 			<li><a href="/login">Login</a></li>
 		  <% end %>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="/articles">Papers & Articles</a></li>
-          <li><a href="#">Video Archives</a></li>
+		  <li><a href="/articles">Papers & Articles</a></li>
+          <li><a href="#"><%= image_tag 'facebook.png', :width=>"30", :height=>"30" %> Like us on facebook</a></li>
+          <li><a href="#"><%= image_tag 'twitter.png', :width=>"30", :height=>"30" %> Follow us on twitter</a></li>
         </ul>
       </div>
       <div class="gadget">
