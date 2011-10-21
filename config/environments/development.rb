@@ -22,7 +22,7 @@ Johnmck::Application.configure do
     :enable_starttls_auto => true, 
     :port => 587, 
     :authentication => :plain, 
-    :user_name => "easyable01@johnjmckelvie.com", :password => 'Nancy123'
+    :user_name => "easyable01@gmail.com", :password => 'Nancy123'
   }
 
 
