@@ -9,15 +9,16 @@
      <% end %></p>
   <p><a href="#"><strong>Comments, (<%= @article.comments.count %>)</strong></a> <span>&nbsp;&bull;&nbsp;</span><%= @article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
 </div>
-<div class="article">
-  <h2></span> Responses</h2>
+<div id="comments">
+  <h2></span> Comments</h2>
   <div class="clr"></div>
   <div id="comments">
     <%= render @article.comments %>
  </div>
+ 
 </div>
 
-<div class="article">
+<div id="comments">
   <h2><span>Leave a</span> Comment</h2>
   <div class="clr"></div>
   <%= form_for([@article, @article.comments.new]) do |f| %>

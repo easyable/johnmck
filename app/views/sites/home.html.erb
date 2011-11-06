@@ -1,7 +1,7 @@
 <div class="article">   
 	<% @articles.each do |article| %>
   <h2><span><%= article.title %></span></h2>
-  <p class="infopost">Posted <span class="date"><%= article.published_at.strftime("%m/%d/%Y") %></span> by <a href="admin@johnjmckelvie.com">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under Papers and Articles</a><a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
+  <p class="infopost">Posted <span class="date"><%= article.published_at.strftime("%m/%d/%Y") %></span> by <a href="admin@johnjmckelvie.com">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under Papers and Articles<a href="#" class="com">Comments<span><%= article.comments.count%></span></a></p>
   <div class="clr"></div>
   <div class="img">
   <% if article.vlocation?%>  

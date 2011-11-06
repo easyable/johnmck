@@ -6,6 +6,7 @@
 <div class="post_content">
 <p><%= @article.body %></p>
 </div>
+<%= link_to "new comment", new_article_comment_path(@article, :format => :js), :remote => true, :id => 'new_comment_link' %>
 <div class="clr"></div>
 <p class="spec"><a href="#"class="rm">Read more</a></p>
 <div class="clr"></div>

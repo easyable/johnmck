@@ -1,12 +1,12 @@
 <%= form_for([@article, @article.comments.new]) do |f| %>
  
   <div class="field">
-	<%= f.label :name %><br/>
+	<%= f.label :name (required) %><br/>
 	<%= f.text_field :name %>
   </div>
 
   <div class="field">
-	<%= f.label :email %><br/>
+	<%= f.label :email (required) %><br/>
 	<%= f.text_field :email %>
   </div>
 
@@ -24,3 +24,5 @@
     <%= f.submit 'Add' %>
   </div>
 <% end %>
+<br />
+<%= link_to 'Back', articles_path %>

@@ -3,9 +3,9 @@
 <div id="comments">
   <%= render @article.comments %>
 </div>
-<div class="article">
+
+<div id="comments">
   <h2><span>Leave a</span> Comment</h2>
-  <div class="clr"></div>
   <%= form_for([@article, @article.comments.new]) do |f| %>
     <ol>
       <li>

@@ -12,7 +12,7 @@ Johnmck::Application.routes.draw do
   match '/home_path',      :to => 'sites#home'
   match '/marketing_path', :to => 'sites#marketing'
   match '/approvals_path', :to => 'sites#approvals'
-   
+  
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout" 
   match ':controller(/:action(/:id(.:format)))'
