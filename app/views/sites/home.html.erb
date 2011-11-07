@@ -1,7 +1,7 @@
 <div class="article">   
 	<% @articles.each do |article| %>
   <h2><span><%= article.title %></span></h2>
-  <p class="infopost">Posted <span class="date"><%= article.published_at.strftime("%m/%d/%Y") %></span> by <a href="admin@johnjmckelvie.com">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under Papers and Articles <%= link_to(article, :class=>"com") do %>
+  <p class="infopost">Posted <span class="date"><%= article.published_at.strftime("%m/%d/%Y") %></span> by <a href="mailto:admin@johnjmckelvie.com">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under Papers and Articles <%= link_to(article, :class=>"com") do %>
                                                                                                                                                                                                                     Comments<span><%= article.comments.count %></span>
                                                                                                                                                                                                                   <% end %>
   <div class="clr"></div>
@@ -31,7 +31,7 @@
 <div class="article">
   <% @marketing.each do |article| %>
   <h2><span><%= article.title %></span></h2>
-  <p class="infopost">Posted <span class="date"><%= article.published_at.strftime("%m/%d/%Y") %></span> by <a href="admin@johnjmckelvie.com">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under Papers and Articles <%= link_to(article, :class=>"com") do %>
+  <p class="infopost">Posted <span class="date"><%= article.published_at.strftime("%m/%d/%Y") %></span> by <a href="mailto:admin@johnjmckelvie.com">Admin</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under Papers and Articles <%= link_to(article, :class=>"com") do %>
                                                                                                                                                                                                                     Comments<span><%= article.comments.count %></span>
                                                                                                                                                                                                                   <% end %>
   <div class="clr"></div>

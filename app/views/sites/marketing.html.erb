@@ -2,12 +2,12 @@
 <div class="article">
   <h2><span><%= @article.title %></span></h2>
   <div class="clr"></div>
-  <p>Posted by <a href="admin@johnjmckelvie.com">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under: <%= @article.title %></p
+  <p>Posted by <a href="mailto:admin@johnjmckelvie.com">Admin</a> <span>&nbsp;&bull;&nbsp;</span> Filed under: <%= @article.title %></p
   <p><%=@article.body %></p>
   <p><% if @article.tag_list.present? %> 
      <medium>Tagged: <%= @article.tag_list %></medium>
      <% end %></p>
-  <p><a href="#"><strong>Comments, (<%= @article.comments.count %>)</strong></a> <span>&nbsp;&bull;&nbsp;</span><%= @article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
+  <p><strong>Comments, (<%= @article.comments.count %>)</strong> <span>&nbsp;&bull;&nbsp;</span><%= @article.published_at.strftime("%m/%d/%Y") %><span>&nbsp;&bull;&nbsp;</span></p>
 </div>
 <div id="comments">
   <h2></span> Comments</h2>
