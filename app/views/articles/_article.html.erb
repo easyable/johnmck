@@ -12,6 +12,6 @@
     <% if article.tag_list.present? %> 
   <medium>Tags:<%= article.tag_list %></medium>
   <% end %>
-  <%= simple_format raw(article.body) %>  
+  <%= simple_format article.body %>  
 <% end %>
   

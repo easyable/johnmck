@@ -1,28 +1,28 @@
-<%= form_for([@article, @article.comments.new]) do |f| %>
- 
-  <div class="field">
-	<%= f.label :name (required) %><br/>
-	<%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-	<%= f.label :email (required) %><br/>
-	<%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-	<%= f.label :company %><br/>
-	<%= f.text_field :company %>
-  </div>
-
-  <div class="field">
-	<%= f.label :body %><br/>
-	<%= f.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Add' %>
-  </div>
-<% end %>
-<br />
+<div id="comments">
+  <%= form_for([@article, @article.comments.new], :html => {:style => 'display: none;'}) do |f| %>
+    <ol>
+      <li>
+        <label for="name">Name (required)</label>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <label for="email">Email Address (required)</label>
+        <%= f.text_field :email %>
+      </li>
+      <li>
+        <label for="company">Company</label>
+        <%= f.text_field :company %>
+      </li>
+      <li>
+        <label for="message">Your Message</label>
+        <%= f.text_area :body %>
+      </li>
+      <li>
+        <input type="image" name="imageField" id="imageField" src="/images/submit.gif" class="send"/>
+        <div class="clr"></div>
+      </li>
+    </ol>
+  <% end %>
+</div>
+<br \>
 <%= link_to 'Back', articles_path %>
