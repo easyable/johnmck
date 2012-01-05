@@ -1,8 +1,8 @@
 Johnmck::Application.routes.draw do
   root :to => 'sites#home'
   resources :articles do
-    resources :comments
-  end
+   resources :comments
+  end 
   resources :users
   resource :session
   
@@ -16,4 +16,5 @@ Johnmck::Application.routes.draw do
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout" 
   match ':controller(/:action(/:id(.:format)))'
+
 end

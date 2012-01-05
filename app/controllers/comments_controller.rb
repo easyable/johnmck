@@ -1,18 +1,19 @@
 class CommentsController < ApplicationController
   before_filter :load_article, :except =>  [:create, :destroy, :approve, :unapprove]
   before_filter :authenticate, :only => :destroy
+   
   def create 
-    @article = Article.find(params[:article_id])
+     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(params[:comment])
       if @comment.save
         respond_to do |format|
-          format.html {redirect_to @article, :notice => 'Thanks for your comment'}
+          format.html { redirect_to @article, :notice => 'Thanks for your comment' }
           format.js
         end
       else
         respond_to do |format|
-          format.html {redirect_to @article, :alert => 'Unable to add comment'}
-          format.js { render 'fail_create.js.erb'}
+          format.html { redirect_to @article, :alert => 'Unable to add comment' }
+          format.js { render 'fail_create.js.erb' }
         end 
       end
   end
@@ -30,6 +31,7 @@ class CommentsController < ApplicationController
      respond_to do |format|
        format.html # show.html.erb
        format.xml { render :xml => @article }
+       format.js
      end
   end
   
