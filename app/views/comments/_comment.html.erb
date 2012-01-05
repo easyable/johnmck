@@ -1,8 +1,8 @@
 <%= div_for comment do %>
   <h3>
 	 <% if comment.approved or current_user %>
-     <%= comment.name %> &lt;<%= comment.email %>&gt; Says:
-     <% if current_user %>
+       <%= comment.name %> &lt;<%= comment.email %>&gt; Says:
+      <% if current_user %>
 	      <span class='actions'>		
 		  <% if comment.approved %>
 			<%= link_to 'Unapprove', {:controller=>'comments', :action=>'unapprove', :id => comment.id}, :class=>'ajax', :remote=>true %>    
@@ -14,6 +14,5 @@
    	  <% end %>	
   </h3>
 	<%= simple_format comment.body %>
-    <% end %>
-     
+    <% end %> 
 <% end %>

@@ -3,36 +3,28 @@ class CommentsController < ApplicationController
   before_filter :authenticate, :only => :destroy
    
   def create 
-     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(params[:comment])
-      if @comment.save
-        respond_to do |format|
-          format.html { redirect_to @article, :notice => 'Thanks for your comment' }
-          format.js
-        end
-      else
-        respond_to do |format|
-          format.html { redirect_to @article, :alert => 'Unable to add comment' }
-          format.js { render 'fail_create.js.erb' }
-        end 
+    if @comment.save
+      respond_to do |format|
+        format.html { redirect_to @article, :notice => 'Thanks for your comment' }
+        format.js
       end
+    else
+      respond_to do |format|
+        format.html { redirect_to @article, :alert => 'Unable to add comment' }
+        format.js { render 'fail_create.js.erb' }
+      end 
+    end
   end
     
   def destroy
     @article = current_user.articles.find(params[:article_id])
     @comment = @article.comments.find(params[:id]) 
     @comment.destroy   
-    redirect_to @article, :notice => 'Comment deleted'
-  end
-  
-  def show
-     @comments = Comments.where(:article_id => @article.id)
-
-     respond_to do |format|
-       format.html # show.html.erb
-       format.xml { render :xml => @article }
-       format.js
-     end
+    respond_to do |format|
+      format.html {redirect_to @article, :notice => 'Comment deleted' }
+      format.js
+    end
   end
   
   def approve
@@ -50,9 +42,10 @@ class CommentsController < ApplicationController
       article = Article.find(:all, :conditions=>["id = ?", comment.article_id])
       redirect_to article, :notice=> ' has been unapproved.'
   end
+  
   private
-  def load_article
-    @article = Article.find(params[:article_id])
-  end
+    def load_article
+      @article = Article.find(params[:article_id])
+    end
 end
 
