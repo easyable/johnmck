@@ -7,11 +7,11 @@ class Article < ActiveRecord::Base
 
   acts_as_taggable
   
-  scope :where_title, lambda { |term| where("articles.title LIKE ?", "%#{term}%") }
+  scope :where_title, lambda { |term| where("articles.title ILIKE ?", "%#{term}%") }
   
   def self.search(search)
     if search      
-      find(:all, :conditions => ['title LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%"])
+      find(:all, :conditions => ['title ILIKE ? OR body ILIKE ?', "%#{search}%", "%#{search}%"])
     else
       find(:all)
     end

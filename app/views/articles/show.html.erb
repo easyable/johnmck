@@ -3,34 +3,11 @@
 <div id="comments">
   <%= render @article.comments %>
 </div>
- 
-<div id="comment_form" style="display:none">
-<%= form_for([@article, @article.comments.new], :remote => true) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-  </div>
+<div id="comments">
+	  <h2><span>Leave a</span> Comment</h2>
+<div class="clr"></div>
 
-  <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-	<%= f.label :company%><br/>
-	<%= f.text_field :company%><br/>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br/>
-    <%= f.text_field :body %>
-  </div>
-
-  <div class="field">
-    <%= f.submit 'Add '%>
-  </div>
-<% end %>
-</div>
- 
-<a id="comment_form_link" href="#">Click me to make a comment</a>
+<a id="comment_form_link" href="#">New Comment</a>
 <script>
 	$(document).ready(function() {
 		$('#comment_form_link').click(function(e) {
@@ -39,7 +16,38 @@
 		});
 	});
 </script>
-<%= link_to "new comment", new_article_comment_path(@article, :format => :js), :remote => true, :id => 'new_comment_link' %>
 
+
+
+ 
+<div id="comment_form" style="display:none">
+	
+	  <%= form_for([@article, @article.comments.new]) do |f| %>
+	    <ol>
+	      <li>
+	        <label for="name">Name (required)</label>
+	        <%= f.text_field :name %>
+	      </li>
+	      <li>
+	        <label for="email">Email Address (required)</label>
+	        <%= f.text_field :email %>
+	      </li>
+	      <li>
+	        <label for="company">Company</label>
+	        <%= f.text_field :company %>
+	      </li>
+	      <li>
+	        <label for="message">Your Message</label>
+	        <%= f.text_area :body %>
+	      </li>
+	      <li>
+	        <input type="image" name="imageField" id="imageField" src="/images/submit.gif" class="send"/>
+	        <div class="clr"></div>
+	      </li>
+	    </ol>
+	  <% end %>
+
+</div>
+ 
 
    

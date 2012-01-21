@@ -9,7 +9,7 @@
 		  <% else %>
 		  	<%= link_to 'Approve', {:controller=>'comments', :action=>'approve', :id => comment.id} %>
 	      <% end %>
-		  <%= button_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete, :remote => true %>	 
+		  <%= link_to 'Delete',[@article, comment], :confirm => 'Are you sure', :method => :delete, :remote => true %>	 
 		  </span>
    	  <% end %>	
   </h3>

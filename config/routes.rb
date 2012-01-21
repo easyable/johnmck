@@ -1,7 +1,9 @@
 Johnmck::Application.routes.draw do
-  root :to => 'sites#home'
+  
+root :to => 'sites#home'
+
   resources :articles do
-   resources :comments
+  resources :comments
   end 
   resources :users
   resource :session
